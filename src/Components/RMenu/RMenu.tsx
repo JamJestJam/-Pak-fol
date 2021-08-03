@@ -163,6 +163,12 @@ const RMenu: FC<IRMenu> = (props) => {
   const y = 2 * klapy + wysokosc;
   const cm2 = round(x * y * 0.01, 2);
 
+  const b1 = p.boxX + 3;
+  const b2 = b1 + p.boxY + 6;
+  const b3 = b2 + p.boxX + 6;
+  const b4 = b3 + p.boxY + 3;
+  const b5 = b4 + jezyk;
+
   const rezult = castResults(props, x, y);
 
   return (
@@ -241,6 +247,12 @@ const RMenu: FC<IRMenu> = (props) => {
           </Grid>
         </Grid>
       </Grid>
+      <Typography variant="h6">Bigi</Typography>
+      1){b1}<br />
+      2){b2}<br />
+      3){b3}<br />
+      4){b4}<br />
+      n){b5}<br />
       <Typography variant="h6">Rozmiar</Typography>
       Długość: {y} mm
       <br />
