@@ -5,36 +5,36 @@ import installExtension, { REACT_DEVELOPER_TOOLS } from "electron-devtools-insta
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 1200,
-    height: 800,
-    webPreferences: {  
-      // contextIsolation: false,
-      nodeIntegration: true,
-      preload: path.join(__dirname, 'preload.js')
-    }
-  }) 
-   
-  win.setMenu(null);
-  win.setResizable(false);
-  if (isDev) {
-    win.loadURL('http://localhost:3000/index.html');
-  } else {
-    // 'build/index.html'
+    width: 1200,   
+    height: 800,  
+    webPreferences: {     
+      contextIsolation: false,
+      nodeIntegration: true, 
+      preload: path.join(__dirname, 'preload.js') 
+    }      
+  })        
+       
+  win.setMenu(null);   
+  win.setResizable(false);  
+  if (isDev) {  
+    win.loadURL('http://localhost:3000/index.html'); 
+  } else {     
+    // 'build/index.html' 
     win.loadURL(`file://${__dirname}/../index.html`);
-  } 
- 
-  // Hot Reloading 
-  if (isDev) {
+  }  
+  
+  // Hot Reloading  
+  if (isDev) {    
     // 'node_modules/.bin/electronPath'
     require('electron-reload')(__dirname, {
-      electron: path.join(__dirname, 
+      electron: path.join(__dirname,  
         '..',
         '..',
         'node_modules',
         '.bin',
         'electron' + (process.platform === "win32" ? ".cmd" : "")),
       forceHardReset: true,
-      hardResetMethod: 'exit'
+      hardResetMethod: 'exit' 
     });
   }  
 
