@@ -1,5 +1,5 @@
 const constLenghts = {
-  jezyk: 42,
+  jezyk: 32,
   ciecia: 3,
 };
 

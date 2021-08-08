@@ -12,7 +12,7 @@ const Sizes: FC = () => {
   if (box.data === undefined) return <></>;
 
   const field = box.data?.height * box.data?.width;
-  const fieldM = round(field * Math.pow(10, -6), 16);
+  const fieldM = round(field * Math.pow(10, -6), 15);
 
   return (
     <CSS.Content>

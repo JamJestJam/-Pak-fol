@@ -5,13 +5,13 @@ const typeHeight = (type: boxEnum) => {
     case boxEnum.B:
       return 8;
     case boxEnum.BC:
-      return 5;
+      return 15;
     case boxEnum.C:
-      return 4;
+      return 10;
     case boxEnum.E:
-      return 2;
+      return 6;
     case boxEnum.EB:
-      return 5;
+      return 12;
     case boxEnum.undef:
       return 0;
   }
