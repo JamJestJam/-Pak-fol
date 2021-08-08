@@ -15,7 +15,7 @@ const Show: FC = () => {
         <Bigi />
       </CSS.Box>
     </CSS.Contener>
-  ); 
+  );
 };
 
 export default Show;

@@ -7,6 +7,7 @@ import LMenu from "./LMenu/LMenu";
 import * as CSS from "./css";
 import InputBox from "../InputBox/InputData";
 import Show from "../Show/Show";
+import Format from "../Format/Format";
 
 const Switch: FC = (p) => {
   const { page } = useSelector<IState, IPageReducer>((GS) => ({
@@ -19,8 +20,12 @@ const Switch: FC = (p) => {
         return <InputBox />;
       case pageEnum.Show:
         return <Show />;
+      case pageEnum.Format:
+        return <Format />;
       case pageEnum.Print:
-        setTimeout(() => {window.print()}, 100);
+        setTimeout(() => {
+          window.print();
+        }, 100);
         return <Show />;
       default:
         return <div>Error 404</div>;
