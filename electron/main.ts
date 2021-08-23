@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, TouchBarOtherItemsProxy } from 'electron';
 import * as path from 'path';
 import * as isDev from 'electron-is-dev';
 import installExtension, { REACT_DEVELOPER_TOOLS } from "electron-devtools-installer";
@@ -6,12 +6,14 @@ import installExtension, { REACT_DEVELOPER_TOOLS } from "electron-devtools-insta
 function createWindow() {
   const win = new BrowserWindow({
     width: 1200,    
-    height: 800,    
+    height: 800,     
     webPreferences: {     
       contextIsolation: false, 
+      worldSafeExecuteJavaScript: true,
+      webSecurity: true,
       nodeIntegration: true, 
       preload: path.join(__dirname, 'preload.js') 
-    }       
+    }        
   })        
        
   win.setMenu(null);   
